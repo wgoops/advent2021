@@ -30,7 +30,7 @@ def fill_in(pairs, grid):
             else: 
                 for y in range(y2, y1 + 1):
                     grid[y][x1] += 1
-        if y1 == y2: 
+        elif y1 == y2: 
                 # we fill in horizontally
             if x2 > x1: 
                 for x in range(x1, x2 + 1):
