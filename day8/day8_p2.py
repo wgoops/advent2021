@@ -1,6 +1,5 @@
 with open("data.txt") as f: 
     data_raw = f.read().splitlines()
-    
 ####get data in a sane format
 #remove newlines
 data_raw = [entry.split(" | ") for entry in data_raw]
