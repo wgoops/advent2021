@@ -1,4 +1,4 @@
-with open("data.txt") as f: 
+with open("data_test.txt") as f: 
     data = f.read().splitlines()
 
 height_grid = [[] for row in data]
@@ -46,19 +46,17 @@ for coord in adjacency_list.keys():
     j = coord[1]
     height = height_grid[i][j]
     point_is_local_min = True
-    #print(f"height:{height}")
+    #print(f"coord:{coord}")
     for neighbor in adjacency_list[coord]:
         k = neighbor[0]
         l = neighbor[1]
         neighbor_height = height_grid[k][l]
-        #print(f"\tneighbor_height:{neighbor_height}")
-
         if neighbor_height <= height: 
             point_is_local_min = False 
 
     if point_is_local_min: 
         risk_level += 1 + height
-        #print("coord is local min")
+        print("coord is local min")
 
         
         
