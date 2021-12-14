@@ -2,7 +2,7 @@
 with open("data.txt") as f: 
     data = f.read().splitlines()
 
-#### obtain first chain ####
+#### obtain chain ####
 chain = data[0]
 
 #### parse raw mapping string into two separate letters, paired ####
@@ -18,7 +18,7 @@ for item in raw_mappings:
 
 #### function definition for stepper ####
 
-def stepper(pair_count, letter_count) -> dict:
+def stepper(pair_count, letter_count):
 
     #### initialize the result pair count ####
     result_count = {}
@@ -44,7 +44,7 @@ def stepper(pair_count, letter_count) -> dict:
             result_count[letter + pair[1]] += pair_count[pair]
             if mappings[pair] in letter_count: 
                 letter_count[letter] += pair_count[pair]
-                
+
             # if the letter isn't found in letter_count, we initialize it here. 
             else: 
                 letter_count[letter] = 1
